@@ -20,6 +20,12 @@ jobs:
       
           $output="nvcc.tar.xz"
           Invoke-WebRequest -Uri $url -OutFile $output
+          
+          tar -xf $output
+          
+          cd $output
+          
+          ls 
 
 #          $client = new-object System.Net.WebClient
 #          $client.Credentials =  Get-Credential 
