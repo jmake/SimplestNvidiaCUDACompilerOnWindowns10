@@ -18,7 +18,7 @@ cl.exe
 
 function SETUP_CUDART
 { 
-  wget https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz
+  wget "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz"
 
   rm cuda_cudart-linux-x86_64-${RELEASE}-archive
   tar -xf cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz
@@ -29,6 +29,7 @@ New-Item -ItemType Directory BUILD
 Set-Location BUILD
 
 $RELEASE=11.5.50 
+echo "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz"
 SETUP_CUDART
 
 
