@@ -16,14 +16,14 @@ jobs:
           powershell 
         
         run : |
-          $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz"
+          $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-11.5.50-archive.zip"
       
-          $output="nvcc.tar.xz"
+          $output="cudart.zip"
           Invoke-WebRequest -Uri $url -OutFile $output
           
-          tar -xf $output
+          Etar -xf $output
           
-          cd $output
+          Ecd $output
           
           ls 
 
