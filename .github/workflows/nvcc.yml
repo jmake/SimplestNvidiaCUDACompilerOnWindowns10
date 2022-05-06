@@ -26,8 +26,8 @@ jobs:
           
           cd cudart
           cd cuda_cudart-windows-x86_64-11.5.50-archive
-          cd bin 
-          .\nvcc.exe --version 
+          #cd bin 
+          #.\nvcc.exe --version 
           
           ls
 
