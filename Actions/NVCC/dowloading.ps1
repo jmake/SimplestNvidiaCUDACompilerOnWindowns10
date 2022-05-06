@@ -24,9 +24,18 @@ function SETUP_NVCC
       cd cuda_nvcc-windows-x86_64-11.5.50-archive
       cd bin
       .\nvcc.exe --version 
+      [Environment]::SetEnvironmentVariable("NVCC",${PWD})
+      
+      cd ${HOME}
 }
 
 $RELEASE=11.5.50
 
 SETUP_CUDART
 SETUP_NVCC
+
+$env:NVCC
+&$env:NVCC --version 
+
+
+
