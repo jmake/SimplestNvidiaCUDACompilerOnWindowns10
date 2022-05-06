@@ -21,9 +21,10 @@ jobs:
           $output="cudart.zip"
           Invoke-WebRequest -Uri $url -OutFile $output
           
-          ls 
           
           Expand-Archive $output
+          
+          cd cudart
           
           ls
 
