@@ -83,7 +83,15 @@ rm simplest.exe
 
 
 ## 2.C. FANCIEST (https://www.collinsdictionary.com/dictionary/english/fanciest) 
-cmake.exe .. -G Ninja -DCMAKE_CUDA_ARCHITECTURES="all"
+
+$CMAKE_CUDA_COMPILER=($env:CUDACXX).replace("\","\\")
+$CUDAToolkit_ROOT=($env:CUDA_PATH).replace("\","\\")
+
+echo $CMAKE_CUDA_COMPILER
+cmake.exe .. -G Ninja -DCMAKE_CUDA_COMPILER="$CMAKE_CUDA_COMPILER" -DCUDAToolkit_ROOT="$CUDAToolkit_ROOT"
+
+
+#-DCMAKE_CUDA_ARCHITECTURES="all"
 
 #ninja.exe
 #ctest.exe
