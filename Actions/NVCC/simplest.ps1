@@ -50,7 +50,7 @@ function CL_SETUP
     $VSTOOLS = join-path $VSTOOLS 'Common7\Tools\vsdevcmd.bat'
     if (test-path $VSTOOLS) 
     {
-      cmd /s /c """$VSTOOLS"" $args && set" | where { $_ -match '(\w+)=(.*)' } | 
+      cmd /s /c " ""$VSTOOLS""  -arch=x64 -host_arch=x64 $args && set" | where { $_ -match '(\w+)=(.*)' } | 
       foreach{$null = new-item -force -path "Env:\$($Matches[1])" -value $Matches[2] }
     }
   }
@@ -63,6 +63,10 @@ $RELEASE=11.5.50
 CUDART_SETUP
 NVCC_SETUP
 CL_SETUP
+
+cmake.exe --version 
+ninja.exe --version 
+
 
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
@@ -78,5 +82,5 @@ $env:NVCC
 rm simplest.exe 
 
 
-cmake.exe --version 
+
 
