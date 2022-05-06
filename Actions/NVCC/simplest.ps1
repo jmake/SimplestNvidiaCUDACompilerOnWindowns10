@@ -22,3 +22,6 @@ CL_SETUP
 
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
+
+&$env:NVCC --version 
+
