@@ -34,9 +34,14 @@ $RELEASE=11.5.50
 $WGET="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-${RELEASE}-archive.tar.xz"
 echo "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-$RELEASE-archive.tar.xz"
 echo $WGET 
-wget $WGET 
 
-SETUP_CUDART
+echo https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-$RELEASE-archive.tar.xz
+echo https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz
+
+
+#wget $WGET 
+
+#SETUP_CUDART
 
 
 
