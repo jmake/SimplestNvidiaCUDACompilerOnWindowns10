@@ -11,7 +11,8 @@ function CUDART_SETUP
       ls 
       
       [Environment]::SetEnvironmentVariable("CUDART_PATH","${PWD}")
-      cd ${HOME}
+      cd ..
+      cd .. 
 }
 
 
@@ -30,7 +31,8 @@ function NVCC_SETUP
       
       [Environment]::SetEnvironmentVariable("NVCC_PATH","${PWD}")
       [Environment]::SetEnvironmentVariable("NVCC","${PWD}\nvcc.exe")
-      cd ${HOME}
+      cd ..
+      cd .. 
 }
 
 function CL_SETUP
