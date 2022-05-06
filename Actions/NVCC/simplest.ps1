@@ -1,7 +1,7 @@
 
-function SETUP_CUDART 
+function CUDART_SETUP 
 {
-      echo "SETUP_CUDART ..."
+      echo "CUDART_SETUP ..."
       
       $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-11.5.50-archive.zip"
       $output="cudart.zip"
@@ -15,9 +15,9 @@ function SETUP_CUDART
 }
 
 
-function SETUP_NVCC
+function NVCC_SETUP
 { 
-      echo "SETUP_NVCC ..."
+      echo "NVCC_SETUP ..."
       
       $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/windows-x86_64/cuda_nvcc-windows-x86_64-11.5.50-archive.zip"
       $output="nvcc.zip"
@@ -35,6 +35,8 @@ function SETUP_NVCC
 
 function CL_SETUP
 {
+  echo "CL_SETUP ..."
+   
   $VSWHERE="C:\ProgramData\Chocolatey\bin\vswhere.exe"
 
   $VSTOOLS = &($VSWHERE) -latest -products * -requires Microsoft.VisualStudio.Component.VC.Tools.x86.x64 -property installationPath
@@ -53,17 +55,25 @@ function CL_SETUP
   cl.exe 
 }
 
-
+## 1. SETUP ...
 $RELEASE=11.5.50
-SETUP_CUDART
-SETUP_NVCC
+CUDART_SETUP
+NVCC_SETUP
 CL_SETUP
 
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
 
-
 $env:CUDART_PATH
 $env:NVCC
 &$env:NVCC --version 
+
+## 2. COMPILATION
+## 2.A. SIMPLEST  
+&$env:NVCC -o smallest.exe ../smallest.cu /I$env:CUDART_PATH/include /L$env:CUDART_PATH/lib
+.\smallest.exe
+rm smallest.exe 
+
+
+cmake.exe --version 
 
