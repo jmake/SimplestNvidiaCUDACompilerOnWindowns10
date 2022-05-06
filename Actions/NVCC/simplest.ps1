@@ -83,7 +83,7 @@ rm simplest.exe
 
 
 ## 2.C. FANCIEST (https://www.collinsdictionary.com/dictionary/english/fanciest) 
-cmake.exe .. -G Ninja -DCMAKE_CUDA_ARCHITECTURES="native"
+cmake.exe .. -G Ninja -DCMAKE_CUDA_ARCHITECTURES="all"
 
 #ninja.exe
 #ctest.exe
