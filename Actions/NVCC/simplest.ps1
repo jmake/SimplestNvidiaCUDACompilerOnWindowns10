@@ -82,5 +82,9 @@ $env:NVCC
 rm simplest.exe 
 
 
+## 2.C. FANCIEST (https://www.collinsdictionary.com/dictionary/english/fanciest) 
+cmake.exe .. -G Ninja 
+ninja.exe
+ctest.exe
 
 
