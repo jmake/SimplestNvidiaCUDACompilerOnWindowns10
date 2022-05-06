@@ -9,6 +9,11 @@ jobs:
     runs-on: windows-2019
 
     steps:
+      - name : wget 
+        shell: |
+          $client = new-object System.Net.WebClient
+          $client.Credentials =  Get-Credential 
+          $client.DownloadFile("https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz","nvcc.tar.xz")
 
       - uses: actions/checkout@v3
 
