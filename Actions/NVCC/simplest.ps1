@@ -28,8 +28,14 @@ function SETUP_CUDART
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
 
-$RELEASE=11.5.50 
-echo "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz"
+wget https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-1.5.50-archive.tar.xz
+
+$RELEASE=11.5.50
+$WGET="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-${RELEASE}-archive.tar.xz"
+echo "https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-$RELEASE-archive.tar.xz"
+echo $WGET 
+wget $WGET 
+
 SETUP_CUDART
 
 
