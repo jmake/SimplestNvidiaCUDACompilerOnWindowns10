@@ -73,9 +73,9 @@ $env:NVCC
 
 ## 2. COMPILATION
 ## 2.A. SIMPLEST  
-&$env:NVCC -o smallest.exe ../smallest.cu -I"$env:CUDART_PATH/include" -L"$env:CUDART_PATH/lib"
-.\smallest.exe
-rm smallest.exe 
+&$env:NVCC -o simplest.exe ../simplest.cu -I"$env:CUDART_PATH/include" -L"$env:CUDART_PATH/lib"
+.\simplest.exe
+rm simplest.exe 
 
 
 cmake.exe --version 
