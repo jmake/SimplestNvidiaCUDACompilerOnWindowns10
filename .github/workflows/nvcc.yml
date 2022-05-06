@@ -18,8 +18,9 @@ jobs:
           powershell 
         
         run : |
-        
-          .\Actions\NVCC\dowloading.ps1 
+          pwd
+          
+          #.\Actions\NVCC\dowloading.ps1 
           
 
       - name: clexe 
