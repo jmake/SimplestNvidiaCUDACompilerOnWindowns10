@@ -28,6 +28,7 @@ function SETUP_CUDART
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
 
+RELEASE=11.5.50 
 SETUP_CUDART
 
 
