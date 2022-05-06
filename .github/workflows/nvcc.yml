@@ -18,7 +18,10 @@ jobs:
         run : |
         
           #.\Actions\NVCC\dowloading.ps1
-          cd Actions\NVCC\
+          ls 
+          cd Actions\
+          ls 
+          cd NVCC 
           .\dowloading.ps1
           
 #          $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-11.5.50-archive.zip"
