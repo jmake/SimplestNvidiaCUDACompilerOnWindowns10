@@ -33,6 +33,7 @@ function NVCC_SETUP
       [Environment]::SetEnvironmentVariable("NVCC","${PWD}\nvcc.exe")
       cd ..
       cd .. 
+      cd ..
 }
 
 function CL_SETUP
