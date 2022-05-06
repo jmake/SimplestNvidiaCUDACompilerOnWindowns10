@@ -1,0 +1,26 @@
+name: SIMPLEST
+
+on: [push, workflow_dispatch]
+  
+jobs:
+
+  build:
+  
+    runs-on: windows-2019
+
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - name: clexe 
+        shell: |
+          powershell 
+          
+        run: |
+          cd Actions/CLEXE/
+          
+          .\simplest.ps1
+          
+          Get-ChildItem
+
+          
