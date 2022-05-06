@@ -21,9 +21,9 @@ jobs:
           $output="cudart.zip"
           Invoke-WebRequest -Uri $url -OutFile $output
           
-          Etar -xf $output
+          #tar -xf $output
           
-          Ecd $output
+          #cd $output
           
           ls 
 
