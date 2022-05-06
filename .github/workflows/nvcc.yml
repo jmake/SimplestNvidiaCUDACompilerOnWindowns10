@@ -21,39 +21,6 @@ jobs:
         
           .\Actions\NVCC\dowloading.ps1 
           
-          #ls 
-          #cd Actions
-          #ls 
-          #cd NVCC 
-          #.\dowloading.ps1
-          
-#          $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-11.5.50-archive.zip"
-#          $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/windows-x86_64/cuda_nvcc-windows-x86_64-11.5.50-archive.zip"
-      
-#          $output="cudart.zip"
-#          Invoke-WebRequest -Uri $url -OutFile $output
-          
-          
-#          Expand-Archive $output
-          
-#          cd cudart
-#          ls 
-          
-#          #cd cuda_cudart-windows-x86_64-11.5.50-archive
-#          cd cuda_nvcc-windows-x86_64-11.5.50-archive
-#          ls 
-          
-#          cd bin 
-#          .\nvcc.exe --version 
-          
-#          ls
-
-#          $client = new-object System.Net.WebClient
-#          $client.Credentials =  Get-Credential 
-#          $client.DownloadFile("https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz","nvcc.tar.xz")
-
-
-
 
       - name: clexe 
         shell: |
