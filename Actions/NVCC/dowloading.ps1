@@ -1,15 +1,21 @@
+
+
 function SETUP_CUDART 
 {
+      echo "SETUP_CUDART ..."
+      
       $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/windows-x86_64/cuda_cudart-windows-x86_64-11.5.50-archive.zip"
       $output="cudart.zip"
       Invoke-WebRequest -Uri $url -OutFile $output
       Expand-Archive $output
-      cd cudart
+      cd cudart\cuda_cudart-windows-x86_64-11.5.50-archive
       ls 
 }
 
 function SETUP_NVCC
 { 
+      echo "SETUP_NVCC ..."
+      
       $url="https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/windows-x86_64/cuda_nvcc-windows-x86_64-11.5.50-archive.zip"
       $output="nvcc.zip"
       Invoke-WebRequest -Uri $url -OutFile $output
