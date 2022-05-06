@@ -15,9 +15,30 @@ if($VSTOOLS)
            
 cl.exe 
 
-wget 
+
+
+SETUP_NVCC()
+{ 
+  wget https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-${RELEASE}-archive.tar.xz
+
+  rm  cuda_nvcc-linux-x86_64-${RELEASE}-archive
+  tar -xf cuda_nvcc-linux-x86_64-${RELEASE}-archive.tar.xz 
+}
+
+
+SETUP_CUDART()
+{ 
+  wget https://developer.download.nvidia.com/compute/cuda/redist/cuda_cudart/linux-x86_64/cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz
+
+  rm cuda_cudart-linux-x86_64-${RELEASE}-archive
+  tar -xf cuda_cudart-linux-x86_64-${RELEASE}-archive.tar.xz
+}
 
 
 New-Item -ItemType Directory BUILD
 Set-Location BUILD
+
+SETUP_CUDART
+
+
 
