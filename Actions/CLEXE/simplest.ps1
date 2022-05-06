@@ -22,6 +22,8 @@ cmake.exe .. -G Ninja
 
 ninja.exe 
 
+ctest.exe
+
 Get-ChildItem 
 
 .\simplest.exe 
