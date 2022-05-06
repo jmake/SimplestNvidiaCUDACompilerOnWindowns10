@@ -17,9 +17,9 @@ jobs:
         
         run : |
         
-          #.\Actions\NVCC\dowloading.ps1
+
           ls 
-          cd Actions\
+          cd Actions
           ls 
           cd NVCC 
           .\dowloading.ps1
