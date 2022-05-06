@@ -16,9 +16,14 @@ jobs:
           powershell 
         
         run : |
-          $client = new-object System.Net.WebClient
-          $client.Credentials =  Get-Credential 
-          $client.DownloadFile("https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz","nvcc.tar.xz")
+          $url = https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz"
+      
+          $output = "nvcc.tar.xz"
+          Invoke-WebRequest -Uri $url -OutFile $output
+
+#          $client = new-object System.Net.WebClient
+#          $client.Credentials =  Get-Credential 
+#          $client.DownloadFile("https://developer.download.nvidia.com/compute/cuda/redist/cuda_nvcc/linux-x86_64/cuda_nvcc-linux-x86_64-11.5.50-archive.tar.xz","nvcc.tar.xz")
 
 
       - uses: actions/checkout@v3
