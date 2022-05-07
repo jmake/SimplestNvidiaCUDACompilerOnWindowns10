@@ -104,9 +104,17 @@ function COMPILATION_NICEST
       $env:PATH="$env:PATH;$env:NVCC_PATH;"
       nvcc.exe --version 
       
-      nvcc.exe simplest.exe ../simplest.cu
+      nvcc.exe -o simplest.exe ../simplest.cu
       .\simplest.exe
       rm simplest.exe       
+}
+
+
+function COMPILATION_PERFECT 
+{
+      cmake.exe .. -G Ninja 
+      ninja.exe
+      ctest.exe
 }
 
 
@@ -132,6 +140,7 @@ Set-Location BUILD
 
 COMPILATION_OBVIOUS
 COMPILATION_NICEST 
+COMPILATION_PERFECT
 #COMPILATION_SIMPLEST
 
 
