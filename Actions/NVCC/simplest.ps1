@@ -84,6 +84,7 @@ function CL_SETUP
 
 function COMPILATION_OBVIOUS 
 { 
+      echo "COMPILATION_OBVIOUS ..."
       &$env:NVCC -o simplest.exe ../simplest.cu -I"$env:CUDART_INC" -L"$env:CUDART_LIB"
       .\simplest.exe
       rm simplest.exe 
@@ -92,12 +93,16 @@ function COMPILATION_OBVIOUS
 
 function COMPILATION_NICEST 
 { 
+      echo "COMPILATION_NICEST ..."
       $env:LIBRARIES=" -I ${$env:CUDART_INC}"
-      $env:INCLUDES=" -LIBPATH:{$env:CUDART_LIB} "
+      $env:INCLUDES=" /LIBPATH:{$env:CUDART_LIB} "
       
       &$env:NVCC -o simplest.exe ../simplest.cu 
       .\simplest.exe
       rm simplest.exe 
+      
+      $env:PATH="$env:PATH;$env:NVCC_PATH;"
+      nvcc.exe --version 
 }
 
 
@@ -108,7 +113,7 @@ $RELEASE=11.5.50
 
 ## 1. SETUP ...
 NVCC_SETUP
-&$env:NVCC --version. 
+&$env:NVCC --version 
 
 CUDART_SETUP
 $env:CUDART_LIB
