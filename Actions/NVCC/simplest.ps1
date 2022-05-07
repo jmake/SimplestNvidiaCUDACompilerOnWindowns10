@@ -103,6 +103,10 @@ function COMPILATION_NICEST
       
       $env:PATH="$env:PATH;$env:NVCC_PATH;"
       nvcc.exe --version 
+      
+      nvcc.exe simplest.exe ../simplest.cu
+      .\simplest.exe
+      rm simplest.exe       
 }
 
 
