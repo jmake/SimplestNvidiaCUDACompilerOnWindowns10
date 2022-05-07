@@ -18,12 +18,12 @@ function CUDART_SETUP
       Get-ChildItem 
       
       $env:CUDART_PATH="$ROOT\$CUDART"
-      $env:CUDART_LIB="env:CUDART_PATH\lib"
-      $env:CUDART_INC="env:CUDART_PATH\include"      
+      $env:CUDART_LIB="$env:CUDART_PATH\lib"
+      $env:CUDART_INC="$env:CUDART_PATH\include"      
 
-      $env:CUDART_PATH=("env:CUDART_PATH").replace("\","\\")
-      $env:CUDART_LIB=("env:CUDART_LIB").replace("\","\\")
-      $env:CUDART_INC=("env:CUDART_INC").replace("\","\\")
+      $env:CUDART_PATH=("$env:CUDART_PATH").replace("\","\\")
+      $env:CUDART_LIB=("$env:CUDART_LIB").replace("\","\\")
+      $env:CUDART_INC=("$env:CUDART_INC").replace("\","\\")
       
       Set-Location -Path $ROOT
 }
@@ -51,8 +51,8 @@ function NVCC_SETUP
       $env:NVCC_PATH="$ROOT\$NVCC\bin" 
       $env:NVCC="$env:NVCC_PATH\nvcc.exe"  
       
-      $env:NVCC_PATH=("env:NVCC_PATH").replace("\","\\")
-      $env:NVCC=("env:NVCC").replace("\","\\")
+      $env:NVCC_PATH=("$env:NVCC_PATH").replace("\","\\")
+      $env:NVCC=("$env:NVCC").replace("\","\\")
  
       Set-Location -Path $ROOT
 }
