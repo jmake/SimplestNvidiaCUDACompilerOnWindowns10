@@ -94,8 +94,8 @@ function COMPILATION_OBVIOUS
 function COMPILATION_NICEST 
 { 
       echo "COMPILATION_NICEST ..."
-      $env:INCLUDES=" -I ${$env:CUDART_INC}"
-      $env:LIBRARIES=" -LIBPATH:{$env:CUDART_LIB} "
+      $env:INCLUDES=" -I ${env:CUDART_INC}"
+      $env:LIBRARIES=" -LIBPATH:${env:CUDART_LIB} "
       
       &$env:NVCC -o simplest.exe ../simplest.cu 
       .\simplest.exe
