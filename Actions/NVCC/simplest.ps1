@@ -112,6 +112,7 @@ function COMPILATION_NICEST
 
 function COMPILATION_PERFECT 
 {
+      echo "COMPILATION_PERFECT ..."
       cmake.exe .. -G Ninja 
       ninja.exe
       ctest.exe
