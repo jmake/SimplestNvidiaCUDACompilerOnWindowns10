@@ -1,3 +1,3 @@
-### Simplest Nvidia CUDA Compiler (NVCC) On Windows10
+### Simplest Nvidia CUDA Compilation (NVCC) On Windows10
 
 
