@@ -3,6 +3,7 @@ project(simplest LANGUAGES CXX CUDA)
 enable_language(CUDA)
 
 add_executable(simplest ../simplest.cu)
+set_target_properties(simplest PROPERTIES LINKER_LANGUAGE CXX)
 
 ## CMAKE_CUDA_ARCHITECTURES now detected for NVCC, empty CUDA_ARCHITECTURES not allowed.
 set_property(TARGET simplest PROPERTY CUDA_ARCHITECTURES OFF) 
